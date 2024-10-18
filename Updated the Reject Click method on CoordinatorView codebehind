@@ -1,0 +1,17 @@
+        private void Reject_Click(object sender, RoutedEventArgs e)
+        {
+            if (ClaimsGrid.SelectedItem is Claim selectedClaim)
+            {
+                selectedClaim.Status = "Rejected"; // Update status to Rejected
+                selectedClaim.ReviewDate = DateTime.Now; // Set review date
+                Database.UpdateClaim(selectedClaim); // Update in the database
+                MessageBox.Show($"Claim {selectedClaim.ClaimID} rejected!");
+                LoadPendingClaims(); // Refresh the claims list
+            }
+            else
+            {
+                MessageBox.Show("Please select a claim to reject.");
+            }
+        }
+    }
+}

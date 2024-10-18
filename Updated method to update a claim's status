@@ -1,0 +1,10 @@
+   // Method to update a claim's status (approve, reject, etc.)
+   public static void UpdateClaim(Claim claim)
+   {
+       var existingClaim = Claims.FirstOrDefault(c => c.ClaimID == claim.ClaimID);
+       if (existingClaim != null)
+       {
+           existingClaim.Status = claim.Status;
+           existingClaim.ReviewDate = DateTime.Now;
+       }
+   }

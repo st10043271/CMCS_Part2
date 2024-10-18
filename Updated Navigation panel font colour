@@ -1,0 +1,6 @@
+<!-- Navigation Panel -->
+<StackPanel DockPanel.Dock="Left" Width="150" Background="#557373">
+    <Button Content="Submit Claim" Click="SubmitClaim_Click" Height="50" Margin="10" Foreground="#7A7A7A"/>
+    <Button Content="Coordinator View" Click="CoordinatorView_Click" Height="50" Margin="10" Foreground="#7A7A7A"/>
+    <Button Content="Track Claim Status" Click="TrackClaimStatus_Click" Height="50" Margin="10" Foreground="#7A7A7A"/>
+</StackPanel>

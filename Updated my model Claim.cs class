@@ -1,0 +1,19 @@
+using System;
+
+namespace CMCS
+{
+    public class Claim
+    {
+        public string ClaimID { get; set; }
+        public string LecturerID { get; set; }  // Add LecturerID for unique identification
+        public string LecturerName { get; set; } // Lecturer Name for display
+        public double HoursWorked { get; set; }
+        public double HourlyRate { get; set; }
+        public string Status { get; set; } = "Pending";
+        public DateTime SubmissionDate { get; set; }
+        public DateTime? ReviewDate { get; set; }
+
+        // Calculated field to get total amount for the claim
+        public double TotalAmount => HoursWorked * HourlyRate;
+    }
+}

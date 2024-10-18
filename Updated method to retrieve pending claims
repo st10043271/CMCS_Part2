@@ -1,0 +1,5 @@
+        // Method to retrieve pending claims
+        public static List<Claim> GetPendingClaims()
+        {
+            return Claims.Where(c => c.Status == "Pending").ToList();
+        }

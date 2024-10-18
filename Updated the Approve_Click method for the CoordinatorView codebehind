@@ -1,0 +1,15 @@
+        private void Approve_Click(object sender, RoutedEventArgs e)
+        {
+            if (ClaimsGrid.SelectedItem is Claim selectedClaim)
+            {
+                selectedClaim.Status = "Approved"; // Update status to Approved
+                selectedClaim.ReviewDate = DateTime.Now; // Set review date
+                Database.UpdateClaim(selectedClaim); // Update in the database
+                MessageBox.Show($"Claim {selectedClaim.ClaimID} approved!");
+                LoadPendingClaims(); // Refresh the claims list
+            }
+            else
+            {
+                MessageBox.Show("Please select a claim to approve.");
+            }
+        }

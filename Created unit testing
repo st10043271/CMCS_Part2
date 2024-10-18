@@ -1,0 +1,94 @@
+using NUnit.Framework; 
+using CMCS; 
+
+
+namespace CMCS_PART2_WPF_
+{
+    class ClaimTests
+    {
+        [Test]
+        public void CalculateTotalAmount_ValidInput_ReturnsCorrectTotal()
+        {
+            // Arrange
+            var claim = new Claim
+            {
+                HoursWorked = 10,
+                HourlyRate = 50
+            };
+
+            // Act
+            double result = claim.CalculateTotalAmount();
+
+            // Assert
+            Assert.AreEqual(500, result);
+        }
+
+        [Test]
+        public void CalculateTotalAmount_ZeroHours_ReturnsZero()
+        {
+            // Arrange
+            var claim = new Claim
+            {
+                HoursWorked = 0,
+                HourlyRate = 50
+            };
+
+            // Act
+            double result = claim.CalculateTotalAmount();
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void CalculateTotalAmount_ZeroRate_ReturnsZero()
+        {
+            // Arrange
+            var claim = new Claim
+            {
+                HoursWorked = 10,
+                HourlyRate = 0
+            };
+
+            // Act
+            double result = claim.CalculateTotalAmount();
+
+            // Assert
+            Assert.AreEqual(0, result);
+        }
+
+        [Test]
+        public void CalculateTotalAmount_NegativeHours_ReturnsNegativeTotal()
+        {
+            // Arrange
+            var claim = new Claim
+            {
+                HoursWorked = -10,
+                HourlyRate = 50
+            };
+
+            // Act
+            double result = claim.CalculateTotalAmount();
+
+            // Assert
+            Assert.AreEqual(-500, result);
+        }
+
+        [Test]
+        public void CalculateTotalAmount_NegativeRate_ReturnsNegativeTotal()
+        {
+            // Arrange
+            var claim = new Claim
+            {
+                HoursWorked = 10,
+                HourlyRate = -50
+            };
+
+            // Act
+            double result = claim.CalculateTotalAmount();
+
+            // Assert
+            Assert.AreEqual(-500, result);
+        }
+    }
+}

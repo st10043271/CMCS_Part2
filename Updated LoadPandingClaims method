@@ -1,0 +1,16 @@
+        private void LoadPendingClaims()
+        {
+            var pendingClaims = Database.GetPendingClaims();
+
+            if (pendingClaims.Count == 0)
+            {
+                NoClaimsMessage.Visibility = Visibility.Visible;
+                ClaimsGrid.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                NoClaimsMessage.Visibility = Visibility.Collapsed;
+                ClaimsGrid.Visibility = Visibility.Visible;
+                ClaimsGrid.ItemsSource = pendingClaims;
+            }
+        }
