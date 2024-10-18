@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="CMCS.ClaimStatus"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="600" Height="400">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock FontSize="20" FontWeight="Bold" Margin="0,0,0,20">Track Claim Status</TextBlock>
+
+            <!-- DataGrid to display all claims for the lecturer -->
+            <DataGrid Name="StatusGrid" AutoGenerateColumns="False" Width="500" Height="300">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Claim ID" Binding="{Binding ClaimID}"/>
+                    <DataGridTextColumn Header="Lecturer Name" Binding="{Binding LecturerName}"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Header="Submission Date" Binding="{Binding SubmissionDate}"/>
+                    <DataGridTextColumn Header="Review Date" Binding="{Binding ReviewDate}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>

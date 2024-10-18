@@ -1,0 +1,42 @@
+﻿<Window x:Class="CMCS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Contract Monthly Claim System" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <!-- Navigation Panel -->
+            <StackPanel DockPanel.Dock="Left" Width="150" Background="#557373">
+                <Button Content="Submit Claim" Click="SubmitClaim_Click" Height="50" Margin="10" Foreground="#7A7A7A"/>
+                <Button Content="Coordinator View" Click="CoordinatorView_Click" Height="50" Margin="10" Foreground="#7A7A7A"/>
+                <Button Content="Track Claim Status" Click="TrackClaimStatus_Click" Height="50" Margin="10" Foreground="#7A7A7A"/>
+            </StackPanel>
+
+            <!-- Content Area (For Dynamic Navigation) -->
+            <ContentControl x:Name="MainContent" DockPanel.Dock="Right">
+                <Grid Background="#F5F5F5" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Heading -->
+                    <TextBlock Text="Contract Monthly Claim System"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               Foreground="#3E3E3E"
+                               HorizontalAlignment="Center"
+                               Margin="10"
+                               Grid.Row="0"/>
+
+                    <!-- Placeholder for Future Content -->
+                    <TextBlock Text="Welcome! Please select an option from the left."
+                               FontSize="16"
+                               Foreground="#7A7A7A"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Grid.Row="1"/>
+                </Grid>
+            </ContentControl>
+        </DockPanel>
+    </Grid>
+</Window>
