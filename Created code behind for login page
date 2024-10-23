@@ -1,0 +1,39 @@
+using System.Windows;
+
+namespace CMCS
+{
+    public partial class LoginPage : Window
+    {
+        public LoginPage()
+        {
+            InitializeComponent();
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameTextBox.Text;
+            string password = PasswordBox.Password; // Secure password entry
+
+            // Replace with real authentication logic or database check
+            if (IsValidLogin(username, password))
+            {
+                // Successful login, navigate to the main window
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                // Display error message for invalid login
+                ErrorMessage.Text = "Invalid username or password. Please try again.";
+            }
+        }
+
+        // Simple validation logic (replace with database authentication if needed)
+        private bool IsValidLogin(string username, string password)
+        {
+            // Example: hardcoded credentials, replace with database check
+            return username == "admin" && password == "password123";
+        }
+    }
+}
